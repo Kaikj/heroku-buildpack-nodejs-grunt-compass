@@ -158,6 +158,10 @@ else
   HOME=$build_dir gem install compass --user-install --no-rdoc --no-ri
 fi
 
+# Allow the gem to find the ruby interperter
+mkdir -p $build_dir/vendor/ruby-1.9.2/bin
+cp -r '/usr/local/bin/ruby' $build_dir/vendor/ruby-1.9.2/bin/ruby
+
 # cache ruby gems compass
 rm -rf $cache_dir/ruby
 mkdir -p $cache_dir/ruby
